@@ -1,5 +1,4 @@
-# Enterprise-EKS-Monitoring-with-Prometheus-Operator-and-Grafana
-Enterprise EKS Monitoring with Prometheus-Operator and Grafana
+Enterprise EKS Monitoring with Prometheus, Grafana, Node Exporter, Blackbox Exporter and Alertmanager
 
 
 Alertmanger,Blackbox_exporter,Prometheus,Grafana are setup as the container using the offical docker hub images
