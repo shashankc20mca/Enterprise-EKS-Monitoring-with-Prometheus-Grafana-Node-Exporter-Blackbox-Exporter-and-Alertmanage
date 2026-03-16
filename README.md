@@ -24,3 +24,7 @@ docker run -d \
 -p 9093:9093 \
 -v $(pwd)/alertmanager.yml:/etc/alertmanager/alertmanager.yml \
 prom/alertmanager
+
+
+
+![Architecture](images/Monitoring.png)
