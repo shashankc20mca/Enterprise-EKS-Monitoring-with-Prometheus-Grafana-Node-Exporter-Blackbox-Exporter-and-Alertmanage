@@ -14,7 +14,7 @@ receivers:
         smarthost: smtp.gmail.com:587
         auth_username: shashank20mca@gmail.com
         auth_identity: shashank20mca@gmail.com
-        auth_password: acur rjtd brdq bvuy
+        auth_password: 
         send_resolved: true
 inhibit_rules:
   - source_match:
