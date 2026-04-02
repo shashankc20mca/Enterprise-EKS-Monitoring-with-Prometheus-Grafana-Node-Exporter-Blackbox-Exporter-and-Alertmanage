@@ -42,19 +42,17 @@ groups:
             Disk is almost full (< 50% left)
              VALUE = {{ $value}}
              LABELS: {{ $labels }}
-      - alert: HostHighCpuLoad
-        expr: (sum by
-          (instance)(irate(node_cpu{job="node_exporter_metrics",mode="idle"}[5m])))
-          > 80
-        for: 5m
-        labels:
-          severity: warning
-        annotations:
-          summary: Host high CPU load (instance {{ $labels.instance }})
-          description: |-
-            CPU load is > 80%
-             VALUE = {{ $value }}
-             LABELS:{{ $labels }}
+     - alert: HostHighCpuLoad
+  expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{job="node_exporter", mode="idle"}[5m])) * 100) > 80
+  for: 5m
+  labels:
+    severity: warning
+  annotations:
+    summary: Host high CPU load (instance {{ $labels.instance }})
+    description: |-
+      CPU usage is > 80%
+       VALUE = {{ $value }}
+       LABELS: {{ $labels }}
       - alert: ServiceUnavailable
         expr: up{job="node_exporter"} == 0
         for: 2m
